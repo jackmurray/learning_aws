@@ -1,0 +1,114 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": null,
+    "containerDefinitions": [
+        {
+            "dnsSearchDomains": null,
+            "logConfiguration": null,
+            "entryPoint": null,
+            "portMappings": [
+                {
+                    "hostPort": 4001,
+                    "protocol": "tcp",
+                    "containerPort": 4001
+                }
+            ],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": "IPFS_PROFILE",
+                    "value": "server"
+                }
+            ],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [
+                {
+                    "readOnly": null,
+                    "containerPath": "/data/ipfs",
+                    "sourceVolume": "data"
+                },
+                {
+                    "readOnly": null,
+                    "containerPath": "/export",
+                    "sourceVolume": "export"
+                },
+                {
+                    "readOnly": null,
+                    "containerPath": "/data/import",
+                    "sourceVolume": "import"
+                }
+            ],
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": 512,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "ipfs/go-ipfs:latest",
+            "startTimeout": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "ipfs"
+        }
+    ],
+    "memory": null,
+    "taskRoleArn": null,
+    "family": "ipfs",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "networkMode": null,
+    "cpu": null,
+    "proxyConfiguration": null,
+    "volumes": [
+        {
+            "name": "data",
+            "host": {
+                "sourcePath": null
+            },
+            "dockerVolumeConfiguration": {
+				"scope": "shared",
+				"autoprovision": "true"
+			}
+        },
+        {
+            "name": "import",
+            "host": {
+                "sourcePath": null
+            },
+            "dockerVolumeConfiguration": {
+				"scope": "shared",
+				"autoprovision": "true"
+			}
+        },
+        {
+            "name": "export",
+            "host": {
+                "sourcePath": null
+            },
+            "dockerVolumeConfiguration": {
+				"scope": "shared",
+				"autoprovision": "true"
+			}
+        }
+    ],
+    "placementConstraints": []
+}
